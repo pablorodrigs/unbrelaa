@@ -1,0 +1,44 @@
+import tkinter as tk
+import requests
+import time
+
+def getwather(canvas):
+    City = textfield.get()
+    API = "api.openweathermap.org/data/2.5/weather?imperial=" + city +"{imperial}&imperial={imperial}&appid={7accfe6eb113b95f95e098064b10ae76}"
+
+    json_data = request.get(api).json()
+    condition = json_data['wather'][0]['main']
+     temp = int(json_data['main']['temp'] - 282.55)
+      min_temp = int(json_data['main']['temp_min'] - 280.37) 
+       max_temp = int(intjson_data['main']['temp_max'] - 284.26)
+         pressure = int(json_data ['main']['pressure'] - 1023)
+           humity = int(json_data ['main'][' humity'] - 100)
+             wind = int(json_data['wind']['spead']- 1.5)
+              sunrise = time.strftime("%I:%M:%S", time.gmtime9json_data['sys]['sunrise] -21600 ))
+              sunsettime.strftime("%I:%M:%S", time.gmtime9json_data['sys']['sunset'] - 21600 ))
+
+
+            final_info = condition + "\"  str(temp) + "ºc"
+            final_date = "n" + "max temp: " +str(max_temp) + "\n" + "Min temp" + str(min_temp ) + "\n" + "pressure:" + str(pressure) + "humity:" + str(humity) + "\n" + "wind speed:" + str(wind) + "\n" + "sunrise:" + sunrise + "\n" + "sunset" + sunset
+            label1.config(text = final_info)
+            label2.config(text = final_data)                                                        
+
+
+canvas = tk.TK()
+canvas.geometry("600x500")
+canvas.ttle("weather app")
+
+a = ("poppins", 15,"bold")
+b = ("poppins",35,"bold")
+
+textfield = tk.entry(canvas,font = b)
+textfield.pack(pady = 20)
+textfield.focus()
+textfield.pack(''<Return', getweather)                                                                    
+
+labelt = tk.Label(canvas,font = b)
+label1.pack()
+label2 = tk.Label(canvas,font = a)
+label2.pack()
+
+canvas.mainloop()
